@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 
-mongoose.connect("mongodb+srv://surendra:suri1210@surendra.irg39h8.mongodb.net/receipe_hub?retryWrites=true&w=majority&appName=Surendra").then(()=>{
+mongoose.connect("mongodb+srv://surendra:Suri1234@surendra.irg39h8.mongodb.net/receipe_hub?retryWrites=true&w=majority&appName=Surendra").then(()=>{
     console.log("Database Is Connected");
 });
 

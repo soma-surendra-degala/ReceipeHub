@@ -27,11 +27,11 @@ export default function Categories() {
       <div>
         <span className="fs-5 fw-bold">Categories</span>
       </div>
-      <div className='row'>
+      <div className='row mt-3'>
         {
             categoryData.map((category)=>{
                 return <div className='col-md-3'>
-                    <div className="card shadow mt-3" onClick={()=>handleClick(category.categoryId)}>
+                    <div className="card shadow mt-3 p-3" onClick={()=>handleClick(category.categoryId)}>
                         <img src={category.imageurl} alt={category.name} width="100%" height="150"/>  
                         <div className="text-center">
                          <span className="fs-5 fw-bold ">{category.name}</span>
