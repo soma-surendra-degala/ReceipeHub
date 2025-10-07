@@ -12,9 +12,10 @@ export default function ReceipeDetails() {
   const [receipeDetails, setReceipeDetails] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:3500/receipeList/receipe/${receipeId}`)
-      .then(response => setReceipeDetails(response.data))
-      .catch(err => console.error("Error fetching recipe details:", err));
+    axios
+      .get(`https://receipehub-main.onrender.com/receipeList/receipe/${receipeId}`)
+      .then((response) => setReceipeDetails(response.data))
+      .catch((err) => console.error("Error fetching recipe details:", err));
   }, [receipeId]);
 
   if (!receipeDetails) return <div className="text-center mt-5">Loading...</div>;
@@ -25,7 +26,7 @@ export default function ReceipeDetails() {
 
       <div className='container mt-5'>
         {/* Recipe Header */}
-        <div className='bg-dark text-light d-flex'>
+        <div className='bg-dark text-light d-flex flex-wrap'>
           <div className='p-2'>
             <img src={receipeDetails.imageurl} alt={receipeDetails.name} width="500" />
           </div>
@@ -70,9 +71,9 @@ export default function ReceipeDetails() {
         {/* Nutrition */}
         <div className='mt-5'>
           <div className='fs-5 fw-bold text-center'>Recipe Nutrition</div>
-          <div className='mt-5 d-flex justify-content-center'>
+          <div className='mt-5 d-flex justify-content-center flex-wrap'>
             {receipeDetails.RecipeNutrition && Object.entries(receipeDetails.RecipeNutrition).map(([key, val]) => (
-              <div key={key} style={{ width: 100, height: 100 }} className='me-4'>
+              <div key={key} style={{ width: 100, height: 100 }} className='me-4 mb-4'>
                 <CircularProgressbar value={val} text={`${val}%`} />
                 <div className='fs-4 text-center'>{key}</div>
               </div>

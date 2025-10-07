@@ -4,7 +4,8 @@
   "description": "Receipe Hub Backend",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
+  "build": "echo 'No build needed for Node backend'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Surendra",

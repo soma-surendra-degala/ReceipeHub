@@ -11,15 +11,20 @@ export default function Categories() {
     navigate(`/receipelist/${id}`);
 
   }
-
-
+    
    const [categoryData, setCategoryData] = useState([]);
 
-  useEffect(()=>{
-    axios.get("http://localhost:3500/category").then((response)=>{
-    setCategoryData(response.data);
-  })
-  },[])
+useEffect(() => {
+  axios
+    .get("https://receipehub-main.onrender.com/category")
+    .then((response) => {
+      setCategoryData(response.data);
+    })
+    .catch((error) => {
+      console.error("Error fetching category data:", error);
+    });
+}, []);
+
 
 
   return (
