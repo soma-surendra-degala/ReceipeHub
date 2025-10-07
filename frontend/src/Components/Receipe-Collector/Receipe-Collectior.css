@@ -1,11 +1,17 @@
 .slick-slide{
     margin: 10px;
-    width: 200px;
-    height: 100px;
+    border-radius: 10px;
 }
 .slick-list{
     height: 220px;
 }
 .cader{
-    width: 200px ;
+    width: 100px ;
+}
+
+@media screen and (max-width: 768px) {
+    .cader{
+        width: 100px ;
+    }
+    
 }

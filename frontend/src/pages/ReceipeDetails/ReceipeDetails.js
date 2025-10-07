@@ -26,13 +26,13 @@ export default function ReceipeDetails() {
 
       <div className='container mt-5'>
         {/* Recipe Header */}
-        <div className='bg-dark text-light d-flex flex-wrap'>
-          <div className='p-2'>
-            <img src={receipeDetails.imageurl} alt={receipeDetails.name} width="500" />
+        <div className='row bg-dark text-light p-3 rounded'>
+          <div className='col-md-6 text-center mb-3 mb-md-0'>
+            <img src={receipeDetails.imageurl} alt={receipeDetails.name} className="img-fluid rounded" />
           </div>
-          <div className='m-5 flex-grow-1 text-light'>
+          <div className='col-md-6 d-flex flex-column justify-content-center'>
             <div className='fs-4 fw-bold'>{receipeDetails.name}</div>
-            <hr />
+            <hr className='border-light' />
             <div className='fs-5 fw-bold'>
               <div>Servings: {receipeDetails.Servings}</div>
               <div>Ready In Minutes: {receipeDetails.ReadyInMinutes}</div>
@@ -43,7 +43,7 @@ export default function ReceipeDetails() {
 
         {/* Tabs: Ingredients & Summary */}
         <div className='mt-5'>
-          <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <ul className="nav nav-pills mb-3 flex-wrap" id="pills-tab" role="tablist">
             <li className="nav-item" role="presentation">
               <button className="nav-link active" id="pills-ingredients-tab" data-bs-toggle="pill" data-bs-target="#pills-ingredients" type="button">
                 Ingredients
@@ -70,12 +70,12 @@ export default function ReceipeDetails() {
 
         {/* Nutrition */}
         <div className='mt-5'>
-          <div className='fs-5 fw-bold text-center'>Recipe Nutrition</div>
-          <div className='mt-5 d-flex justify-content-center flex-wrap'>
+          <div className='fs-5 fw-bold text-center mb-3'>Recipe Nutrition</div>
+          <div className='d-flex justify-content-center flex-wrap gap-4'>
             {receipeDetails.RecipeNutrition && Object.entries(receipeDetails.RecipeNutrition).map(([key, val]) => (
-              <div key={key} style={{ width: 100, height: 100 }} className='me-4 mb-4'>
+              <div key={key} style={{ width: 100, height: 100 }}>
                 <CircularProgressbar value={val} text={`${val}%`} />
-                <div className='fs-4 text-center'>{key}</div>
+                <div className='fs-6 text-center mt-1'>{key}</div>
               </div>
             ))}
           </div>
